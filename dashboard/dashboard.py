@@ -82,7 +82,7 @@ fig, ax = plt.subplots(figsize=(8, 4.5))
 ax.bar(season_df.index, season_df.values, color=colors)
 for i, v in enumerate(season_df.values):
     ax.text(i, v + season_df.max() * 0.01, f"{v:,.0f}", ha="center", fontsize=10)
-ax.set_title("Rata-rata Penyewaan Harian per Musim")
+ax.set_title("Rata-rata Penyewaan Sepeda Harian per Musim (2011-2012)")
 ax.set_xlabel("Musim")
 ax.set_ylabel("Rata-rata Jumlah Penyewaan per Hari")
 ax.set_ylim(0, season_df.max() * 1.15)
@@ -127,7 +127,7 @@ for col in hourly_df.columns:
         fontsize=9,
     )
 
-ax.set_title("Rata-rata Penyewaan per Jam: Hari Kerja vs Hari Libur")
+ax.set_title("Rata-rata Penyewaan Sepeda per Jam: Hari Kerja vs Hari Libur (2011-2012)")
 ax.set_xlabel("Jam (0-23)")
 ax.set_ylabel("Rata-rata Jumlah Penyewaan per Jam")
 ax.set_xticks(range(0, 24))
@@ -148,7 +148,7 @@ with col_a:
     ax.bar([SUHU_LABEL[k] for k in suhu_df.index], suhu_df.values, color="#1f77b4")
     for i, v in enumerate(suhu_df.values):
         ax.text(i, v + suhu_df.max() * 0.01, f"{v:,.0f}", ha="center", fontsize=10)
-    ax.set_title("Rata-rata Penyewaan Harian per Kategori Suhu")
+    ax.set_title("Rata-rata Penyewaan Harian per Kategori Suhu (2011-2012)")
     ax.set_xlabel("Kategori suhu")
     ax.set_ylabel("Rata-rata Jumlah Penyewaan per Hari")
     ax.set_ylim(0, suhu_df.max() * 1.15)
@@ -165,7 +165,7 @@ with col_b:
     for container in ax.containers:
         ax.bar_label(container, fmt="%.0f", padding=3, fontsize=8)
     ax.set_xticklabels([WAKTU_LABEL[k] for k in waktu_df.index], rotation=0, fontsize=8)
-    ax.set_title("Rata-rata Penyewaan per Jam pada Tiap Kelompok Waktu")
+    ax.set_title("Rata-rata Penyewaan per Jam pada Tiap Kelompok Waktu (2011-2012)")
     ax.set_xlabel("Kelompok waktu")
     ax.set_ylabel("Rata-rata Jumlah Penyewaan per Jam")
     ax.set_ylim(0, waktu_df.max().max() * 1.15)
